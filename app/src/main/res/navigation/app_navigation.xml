@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listing_navigation">
+
+    <include app:graph="@navigation/listing_navigation" />
+    <include app:graph="@navigation/universities_details_navigation" />
+
+    <action android:id="@+id/action_listing_to_universities_details"
+        app:destination="@id/universities_details_navigation">
+        <argument
+            android:name="university"
+            android:defaultValue="@null"
+            app:argType="com.islam.details.UniversityUiModel"
+            app:nullable="true" />
+    </action>
+</navigation>
